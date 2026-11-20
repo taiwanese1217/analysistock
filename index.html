@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysistock｜專業股票研究平台</title>
+<meta name="description" content="Analysistock 股票研究資訊展示平台">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090a0e;color:#f5f2eb;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #302a20}
+.logo{color:#d6b46d;font-size:22px;font-weight:bold;letter-spacing:2px}
+nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:13px}
+.hero{padding:90px 8%;background:linear-gradient(120deg,#211b11,#0c0d12)}
+.gold{color:#d6b46d}
+h1{font-size:clamp(34px,7vw,58px);margin:15px 0}
+p{color:#aaa;line-height:1.8}
+.btn{display:inline-block;background:#d6b46d;color:#111;padding:14px 25px;border-radius:7px;text-decoration:none;font-weight:bold;margin-top:15px}
+section{padding:55px 8%}
+h2{font-size:27px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:#15161b;border:1px solid #51432b;border-radius:12px;padding:25px}
+.price{font-size:32px;color:#d6b46d;font-weight:bold;margin:18px 0}
+.card li{color:#bbb;margin:12px 0}
+input{background:#15161b;color:white;border:1px solid #51432b;border-radius:7px;padding:13px;width:100%;margin:12px 0}
+button{background:#d6b46d;border:0;border-radius:7px;padding:13px 22px;font-weight:bold}
+footer{text-align:center;padding:30px;border-top:1px solid #333;color:#888;font-size:12px}
+@media(max-width:600px){
+header{padding:18px;display:block}
+nav{margin-top:17px}
+nav a{margin:0 12px 0 0}
+.hero{padding:65px 22px}
+section{padding:40px 20px}
+.cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">ANALYSISTOCK</div>
+<nav>
+<a href="#home">首頁</a>
+<a href="#services">分析服務</a>
+<a href="#about">關於我們</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<div class="gold">PREMIUM STOCK RESEARCH</div>
+<h1>洞察市場<br><span class="gold">掌握投資資訊</span></h1>
+<p>以基本面、技術面及籌碼面研究，<br>整理股票市場的重要資訊。</p>
+<a href="#services" class="btn">探索分析服務 →</a>
+</div>
+
+<section id="services">
+<div class="gold">OUR SERVICES</div>
+<h2>股票分析服務</h2>
+<p>依照研究內容選擇適合的報告方案。</p>
+
+<div class="cards">
+<div class="card">
+<div class="gold">STANDARD</div>
+<h2>技術面＋籌碼面</h2>
+<div class="price">NT$3,000</div>
+<ul>
+<li>技術指標研究</li>
+<li>K線與均線資料</li>
+<li>成交量分析</li>
+<li>法人買賣超資料</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="gold">PREMIUM</div>
+<h2>全方位分析</h2>
+<div class="price">NT$5,000</div>
+<ul>
+<li>完整技術面研究</li>
+<li>完整籌碼面研究</li>
+<li>營收與獲利分析</li>
+<li>EPS、毛利率及本益比</li>
+<li>產業資訊研究</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="gold">ABOUT ANALYSISTOCK</div>
+<h2>專注股票研究資訊</h2>
+<p>Analysistock 致力於整理股票市場相關資訊，透過不同分析面向，協助使用者理解企業與市場數據。</p>
+<div class="card">
+<h3 class="gold">報告交付規劃</h3>
+<p>正式服務預計於付款確認後48小時內交付，並透過會員中心提供報告查看及 PDF 下載。</p>
+</div>
+</section>
+
+<section>
+<h2>股票代碼展示</h2>
+<p>輸入股票代碼，預覽未來研究報告的內容架構。</p>
+<input id="stock" placeholder="例如：2330">
+<button onclick="searchStock()">查看展示</button>
+<p id="result"></p>
+</section>
+
+<footer>
+<div class="gold">ANALYSISTOCK</div>
+<p>© 2026 Analysistock</p>
+<p>本網站為展示原型，不提供即時行情或個別投資建議。</p>
+</footer>
+
+<script>
+function searchStock(){
+const code=document.getElementById('stock').value.trim();
+const result=document.getElementById('result');
+if(!/^\d{4,6}$/.test(code)){
+result.textContent='請輸入4至6位數字的股票代碼';
+return;
+}
+result.textContent='已選擇股票代碼：'+code+'。目前為展示功能，尚未連接行情資料。';
+}
+</script>
+</body>
+</html>
